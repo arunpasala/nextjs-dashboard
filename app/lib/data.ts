@@ -13,6 +13,7 @@ import { formatCurrency } from "./utils";
 const sql = postgres(process.env.POSTGRES_URL_NON_POOLING!, {
   ssl: "require",
   prepare: false, // VERY IMPORTANT for Supabase + Next.js
+  max:5,
 });
 
 export async function fetchRevenue() {
